@@ -4,7 +4,8 @@
 
 <h1>ATAQUE XSS</h1>
 
-<form method="POST" action="/comments">
+<form method="GET" action="/comments">
+<input type="hidden" name="secret" value="Informação que não deveria ser visivel para o usuário">
   <label>
     <span>Comentário</span><br>
     <textarea name="comment" rows="4"></textarea>
