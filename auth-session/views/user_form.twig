@@ -3,6 +3,12 @@
 {% block body %}
   <h1>{{title}}</h1>
 
+  {% if message %}
+    <div style="border: 1px solid green; background-color: palegreen; padding: 20px">
+        {{message}}
+    </div>
+  {% endif %}
+  
   <form method="POST" action="/users">
     <label>
         <span>Nome Completo:</span>
