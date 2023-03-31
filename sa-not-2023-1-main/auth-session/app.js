@@ -35,7 +35,7 @@ const sessionConfig = {
 // e cookies seguros
 if(app.get('env') === 'production') {
   app.set('trust proxy', 1)
-  sessionConfig.cookie.secure = true
+  sessionConfig.cookie.secure = true;
 }
 
 app.use(expressSession(sessionConfig))
