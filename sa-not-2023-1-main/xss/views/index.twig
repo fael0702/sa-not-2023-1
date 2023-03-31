@@ -2,10 +2,10 @@
 
 {% block body %}
 
-<h1>ATAQUE XSS</h1>
+<h1>Ataque XSS</h1>
 
-<form method="GET" action="/comments">
-<input type="hidden" name="secret" value="Informação que não deveria ser visivel para o usuário">
+<form method="POST" action="/comments">
+  <input type="hidden" name="secret" value="Informação que não deveria ser visivel para o usuário">
   <label>
     <span>Comentário</span><br>
     <textarea name="comment" rows="4"></textarea>

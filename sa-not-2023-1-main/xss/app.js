@@ -11,6 +11,9 @@ var commentsRouter = require('./routes/comments');
 
 var app = express();
 
+// Conecta ao banco de dados
+const conn = require('./config/database')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'twig');
@@ -18,8 +21,8 @@ app.set('view engine', 'twig');
 app.use(logger('dev'));
 app.use(express.json());
 
-const expressSanitizer = require('express-sanitizer');
-app.use(expressSanitizer());
+const expressSanitizer = require('express-sanitizer')
+app.use(expressSanitizer())
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

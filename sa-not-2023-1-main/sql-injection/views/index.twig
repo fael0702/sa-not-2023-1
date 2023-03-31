@@ -2,59 +2,53 @@
 
 {% block body %}
 
-    <style>
-
-      *{
-        font-family: Calibri, Arial, sans;
-      }
-
-      h1{
-        font-size:30px;
-        text-align:center;
-      }
-
-      form {
-        max-width: 500px;
-        width:80%;
-        margin:50px auto;
-        text-align:center;
-      }
-
-      label{
-        display:block;
-        font-size: 22px;
-        margin-bottom:30px;
-      }
-
-      span{
-        display: block;
-      }
-
-      input{
-        font-size:22px;
-      }
-
-      div{
-        text-align:center;
-      }
-    
-    </style>
-
+  <style>
+    * {
+      font-family: Calibri, Arial, sans;
+    }
+    h1 {
+      font-size: 30px;
+      text-align: center;
+    }
+    form {
+      max-width: 500px;
+      width: 80%;
+      margin: 50px auto;
+      text-align: center;
+    }
+    label {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    span {
+      display: block;
+    }
+    input {
+      font-size: 22px;
+    }
+    div {
+      text-align: center;
+    }
+  </style>
+  
   <h1>{{title}}</h1>
-
+  
   <form action="/users/login" method="POST">
+    
     <label>
-      <span>Usuário<span>
+      <span>Usuário:</span>
       <input id="username" name="username">
-    <label/>
+    </label>
 
     <label>
-      <span>Senha<span>
+      <span>Senha:</span>
       <input type="password" id="password" name="password">
-    <label/>
+    </label>
 
     <div>
       <input type="submit" value="Enviar">
-    <div/>
-    
+    </div>
+
+  </form>
 {% endblock %}

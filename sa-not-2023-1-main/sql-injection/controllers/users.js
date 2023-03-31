@@ -6,14 +6,16 @@ controller.login = async (req, res) => {
   try {
     // const sql = `select * from users where username = '${req.body.username}' and password = '${req.body.password}'`
     const sql = `select * from users where username = $1 and password = $2`
+    
     // console.log('SQL:', sql)
 
+    // Consulta SQL usando parâmetros
     const result = await conn.query(sql, [
       req.body.username,
-      req.body.password,
+      req.body.password
     ])
 
-    console.log({result})
+    console.log(result)
 
     if(result.rows.length > 0) {
       res.render('loggedin', {

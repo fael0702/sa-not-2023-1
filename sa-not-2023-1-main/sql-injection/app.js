@@ -11,6 +11,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Conecta ao banco de dados
+const conn = require('./config/database')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'twig');
