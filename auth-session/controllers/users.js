@@ -52,8 +52,9 @@ controller.login = async (req, res) => {
 
             res.render('feedback'), {
                 level: 'sucess',
-                message: 'Login efetuado com sucesso. Usuário autenticado.'
-            }
+                message: 'Login efetuado com sucesso. Usuário autenticado.',
+                redirectUrl: req.session.redirectUrl
+                }
         } else {
             res.render('user_login', {
                 message: 'Usuário ou senha inválidos.'
@@ -62,6 +63,11 @@ controller.login = async (req, res) => {
     } catch (error) {
         console.error(error);
     }
+}
+
+controller.logout = (req, res) => {
+    req.session.destroy()
+    req.redirect('/users/login')
 }
 
 module.exports = controller
